@@ -1,8 +1,10 @@
 "use strict";
 // Создайте функцию, которая принимает неограниченное количество входящих данных, и возвращает количество строк, переданных ей в этом массиве. Решить с использованием стрелочных функций.
-const returnLengNum = (...data) => console.log(data.length);
+//не правильно понял задачу выводил кольчество строк масива
+const returnLengNum = (...data) =>
+  data.filter((element) => typeof element === "string").length;
 
-returnLengNum(24, 43, 132, 45, "Ivan", 465, "Valick");
+console.log(returnLengNum(24, 43, 132, 45, "Ivan", 465, "Valick"));
 
 // Создайте функцию продвинутого калькулятора. Он принимает знак, а  затем неограниченное количество чисел, над которыми проведет указанную операцию.
 const numbers = [3, 6];
@@ -25,7 +27,7 @@ const calculator = (aperator, ...num) => {
         (previousValue, currentValue) => previousValue / currentValue
       );
     default:
-      return 'Аператор не найден'
+      return "Аператор не найден";
   }
 };
 console.log(calculator("*", ...numbers));
